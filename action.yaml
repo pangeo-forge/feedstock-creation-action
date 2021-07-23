@@ -1,0 +1,15 @@
+name: 'Create Feedstock'
+description: '''
+For a given meta.yaml file: Generate a Feedstock Repository
+to manage the Recipes defined inside. All Recipes must be alongside
+the meta.yaml or in subdirectories alongside the meta.yaml
+'''
+inputs:
+  path_to_meta_yaml:
+    description: 'Path to the meta.yaml file for the Recipes'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path_to_meta_yaml }}
