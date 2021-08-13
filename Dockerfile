@@ -17,4 +17,4 @@ RUN git config --global user.email "62192187+cisaacstern@users.noreply.github.co
 
 COPY action/create_feedstock.sh /create_feedstock.sh
 
-ENTRYPOINT [ "bash", "create_feedstock.sh" ]
+ENTRYPOINT [ "bash", "/create_feedstock.sh" ]
