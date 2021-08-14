@@ -18,9 +18,9 @@ create_feedstock () {
 
   ls "$RECIPES_DIR"
 
-  # git fetch --all
+  git fetch --all
 
-  # git pull origin main
+  git pull origin main
   
   git branch -a
   echo "Checking out"
