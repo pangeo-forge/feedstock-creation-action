@@ -14,11 +14,6 @@ create_feedstock () {
 
   gh repo create "pangeo-forge/$REPO_NAME" -d "The $FEEDSTOCK_NAME Feedstock" --template pangeo-forge/feedstock-template --public --confirm
 
-  ls "$RECIPES_DIR"
-
-  git remote -v
-
-  git branch -a
 
   # git fetch --all
 
@@ -28,21 +23,21 @@ create_feedstock () {
 
   # git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
-  # mkdir feedstock
+  mkdir feedstock
 
-  # cp -r "$RECIPES_DIR/*" feedstock/
+  cp -r "$RECIPES_DIR/*" feedstock/
 
-  # cat <<EOF > ./README.md
-  # # $REPO_NAME
-  # This repository has been generated via the [\`feedstock-creation-action\`](https://github.com/pangeo-forge/feedstock-creation-action) for the $FEEDSTOCK_NAME Feedstock
+  cat <<EOF > ./README.md
+  # $REPO_NAME
+  This repository has been generated via the [\`feedstock-creation-action\`](https://github.com/pangeo-forge/feedstock-creation-action) for the $FEEDSTOCK_NAME Feedstock
 
-# EOF
+EOF
 
-  # git add -A
+  git add -A
 
-  # git commit -m "Add Feedstock files"
+  git commit -m "Add Feedstock files"
 
-  # git push
+  git push
 }
 
 while IFS= read -r value; do
