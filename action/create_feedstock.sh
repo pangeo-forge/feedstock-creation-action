@@ -26,7 +26,7 @@ create_feedstock () {
 
   # git pull origin main
 
-  # git checkout main
+  git checkout main
 
   # git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
