@@ -14,21 +14,15 @@ create_feedstock () {
 
   gh repo create "pangeo-forge/$REPO_NAME" -d "The $FEEDSTOCK_NAME Feedstock" --template pangeo-forge/feedstock-template --public --confirm
 
-  echo "$RECIPES_DIR"
-
-  ls "$RECIPES_DIR"
-
   git fetch --all
 
   git pull origin main
-  
-  git branch -a
-  echo "Checking out"
-  git checkout main
-  git remote -v
-  git branch -a
 
-  # git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
+  git checkout main
+
+  git config --local user.email "$(git log --format='%ae' HEAD^!)"
+
+  git config --local user.name "$(git log --format='%an' HEAD^!)"
 
   mkdir feedstock
 
