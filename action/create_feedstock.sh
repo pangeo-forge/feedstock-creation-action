@@ -18,14 +18,14 @@ create_feedstock () {
 
   ls "$RECIPES_DIR"
 
-  # git remote -v
-
-
   # git fetch --all
 
   # git pull origin main
-
+  
+  git branch -a
+  echo "Checking out"
   git checkout main
+  git remote -v
   git branch -a
 
   # git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
@@ -39,9 +39,6 @@ create_feedstock () {
   This repository has been generated via the [\`feedstock-creation-action\`](https://github.com/pangeo-forge/feedstock-creation-action) for the $FEEDSTOCK_NAME Feedstock
 
 EOF
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "cisaacstern"
 
   git add -A
 
