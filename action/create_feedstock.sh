@@ -16,9 +16,9 @@ create_feedstock () {
 
   git fetch --all
 
-  git pull origin master
+  git pull origin main
 
-  git checkout master
+  git checkout main
 
   git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
