@@ -2,7 +2,6 @@ title: "A Test Feedstock of Recipes"
 description: "Analysis-ready Zarr datasets derived from a dataset"
 pangeo_forge_version: "0.3.3"
 pangeo_notebook_version: "2021.05.04"
-id: a-test-bunch-of-recipes
 recipes:
   - id: a-recipe
     object: "recipe:recipe"
