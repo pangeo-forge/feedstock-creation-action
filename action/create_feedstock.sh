@@ -28,7 +28,7 @@ create_feedstock () {
 
   mkdir feedstock
 
-  cp -r "$RECIPES_DIR" feedstock/
+  cp -r "$RECIPES_DIR/." feedstock/
 
   cat <<EOF > ./README.md
   # $REPO_NAME
