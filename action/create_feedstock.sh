@@ -14,7 +14,11 @@ create_feedstock () {
 
   gh repo create "pangeo-forge/$REPO_NAME" -d "The $FEEDSTOCK_NAME Feedstock" --template pangeo-forge/feedstock-template --public --confirm
 
-  git fetch --all && git pull origin master && git checkout master
+  git fetch --all
+
+  git pull origin master
+
+  git checkout master
 
   git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
@@ -28,7 +32,11 @@ create_feedstock () {
 
 EOF
 
-  git add -A && git commit -m "Add Feedstock files" && git push
+  git add -A
+
+  git commit -m "Add Feedstock files"
+
+  git push origin main
 }
 
 while IFS= read -r value; do
