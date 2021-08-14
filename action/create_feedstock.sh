@@ -40,11 +40,14 @@ create_feedstock () {
 
 EOF
 
+  git config --global user.email "you@example.com"
+  git config --global user.name "cisaacstern"
+
   git add -A
 
   git commit -m "Add Feedstock files"
 
-  git push
+  git push origin main
 }
 
 while IFS= read -r value; do
