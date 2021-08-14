@@ -20,15 +20,11 @@ create_feedstock () {
 
   git checkout main
 
-  git remote set-url origin https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git
-
-  git config --local user.email "$(git log --format='%ae' HEAD^!)"
-
-  git config --local user.name "$(git log --format='%an' HEAD^!)"
+  git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
   mkdir feedstock
 
-  cp -r "$RECIPES_DIR" feedstock/
+  cp -r "$RECIPES_DIR/." feedstock/
 
   cat <<EOF > ./README.md
   # $REPO_NAME
