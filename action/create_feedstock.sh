@@ -14,7 +14,7 @@ create_feedstock () {
 
   gh repo create "pangeo-forge/$REPO_NAME" -d "The $FEEDSTOCK_NAME Feedstock" --template pangeo-forge/feedstock-template --public --confirm
 
-  git fetch --all && git pull origin main && git checkout main
+  git fetch --all && git pull origin master && git checkout master
 
   git remote set-url origin "https://pangeo-forge:$GITHUB_TOKEN@github.com/pangeo-forge/$REPO_NAME.git"
 
