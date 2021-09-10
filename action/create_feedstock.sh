@@ -47,4 +47,5 @@ while IFS= read -r value; do
     FEEDSTOCK_NAME="$value"
     REPO_NAME=$FEEDSTOCK_NAME-feedstock
     create_feedstock
+    rm -r $RECIPES_DIR
 done < <(yq eval '.recipes[].id' /github/workspace/"$META_PATH")
